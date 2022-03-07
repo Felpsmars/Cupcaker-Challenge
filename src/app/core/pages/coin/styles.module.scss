@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-white-dark);
+  padding: 80px 160px;
+}
+
+.panel {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-top: 115px;
+  max-height: 530px;
+}
+
+.containerAll {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.containerInputs {
+  display: flex;
+}
+
+.containerCoins {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}

@@ -18,7 +18,9 @@ const Quantity = (): JSX.Element => {
           type="number"
         />
       </label>
-      {quantity === '' && 'Quantity must be filled!'}
+      <span className={styles.validation}>
+        {quantity === '' && 'Quantity must be filled!'}
+      </span>
     </div>
   )
 }

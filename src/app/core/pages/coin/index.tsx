@@ -20,6 +20,7 @@ const Coin = (): JSX.Element => {
   const [coin, setCoin] = useState<string>()
   const [price, setPrice] = useState<number>()
   const [description, setDescription] = useState<string>()
+  const [quantity, setQuantity] = useState<string>()
 
   useEffect(() => {
     const foundCoin: ICoin | undefined = coins.find(curr => curr.label === coin)
@@ -46,11 +47,16 @@ const Coin = (): JSX.Element => {
 
               <Price price={price} />
 
-              <Quantity />
+              <Quantity
+                quantity={quantity}
+                onChange={(e: FormEvent<HTMLInputElement>): void =>
+                  setQuantity(e.currentTarget.value)
+                }
+              />
             </div>
             <Letter coin={coin} description={description} />
           </div>
-          <Button>ADD NEW COIN</Button>
+          <Button>ADD COIN</Button>
         </div>
       </Panel>
     </div>

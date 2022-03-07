@@ -1,25 +1,26 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent } from 'react'
 
 import styles from './styles.module.scss'
 
-const Quantity = (): JSX.Element => {
-  const [quantity, setQuantity] = useState('')
+interface IProps {
+  onChange: (e: FormEvent<HTMLInputElement>) => void
+  quantity: string | number | undefined
+}
 
+const Quantity = (props: IProps): JSX.Element => {
   return (
     <div className={styles.containerCoin}>
       <label htmlFor="">
         Quantity
         <input
-          onChange={(e: FormEvent<HTMLInputElement>): void =>
-            setQuantity(e.currentTarget.value)
-          }
-          value={quantity}
+          onChange={props.onChange}
+          value={props.quantity}
           className={styles.containerInput}
           type="number"
         />
       </label>
       <span className={styles.validation}>
-        {quantity === '' && 'Quantity must be filled!'}
+        {props.quantity === '' && 'Quantity must be filled!'}
       </span>
     </div>
   )

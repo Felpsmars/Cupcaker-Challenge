@@ -3,7 +3,7 @@ import React, { FormEvent } from 'react'
 import styles from './styles.module.scss'
 
 interface IProps {
-  coin: string | undefined
+  filled: string | undefined
   onChange: (e: FormEvent<HTMLSelectElement>) => void
   coins: {
     label: string
@@ -32,7 +32,7 @@ const Select = (props: IProps): JSX.Element => {
       </label>
 
       <span className={styles.validation}>
-        {props.coin === undefined && 'Coin must be filled!'}
+        {props.filled === undefined && 'Coin must be filled!'}
       </span>
     </div>
   )

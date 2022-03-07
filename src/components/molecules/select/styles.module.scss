@@ -1,0 +1,11 @@
+.validation {
+  display: flex;
+  color: #d50000;
+  margin-bottom: 57px;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+select:invalid {
+  color: gray;
+}

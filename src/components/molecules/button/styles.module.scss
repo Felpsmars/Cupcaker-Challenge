@@ -1,4 +1,4 @@
-.button {
+#button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,10 +9,9 @@
 
   background: #0341b6;
   border: 1px solid #0341b6;
-  width: 327px;
+  width: 200px;
   height: 40px;
   border-radius: 5px;
-  margin: 0 auto;
   transition: 0.3s;
 
   &:active {

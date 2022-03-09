@@ -9,13 +9,13 @@ interface IProps {
 
 const Quantity = (props: IProps): JSX.Element => {
   return (
-    <div className={styles.containerCoin}>
+    <div className={styles.container}>
       <label htmlFor="">
         Quantity
         <input
           onChange={props.onChange}
           value={props.quantity}
-          className={styles.containerInput}
+          className={styles.input}
           type="number"
         />
       </label>

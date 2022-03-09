@@ -1,14 +1,15 @@
-.containerCoin {
+.container {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 33%;
 }
 
-.containerInput {
+.input {
   margin-top: 5px;
   height: 40px;
   border: 1px solid #d50000;
   border-radius: 5px;
+  padding-left: 10px;
 }
 
 .validation {

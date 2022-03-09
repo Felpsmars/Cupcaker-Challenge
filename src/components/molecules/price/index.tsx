@@ -8,11 +8,11 @@ interface IProps {
 
 const Price = (props: IProps): JSX.Element => {
   return (
-    <div className={styles.containerCoin}>
-      <label className={styles.price} htmlFor="">
+    <div className={styles.container}>
+      <label className={styles.label} htmlFor="">
         Price
         <input
-          className={styles.containerInput}
+          className={styles.input}
           value={props.price}
           disabled
           type="text"

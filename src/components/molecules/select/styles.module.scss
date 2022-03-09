@@ -1,9 +1,7 @@
-.validation {
+.container {
   display: flex;
-  color: #d50000;
-  margin-bottom: 57px;
-  margin-left: 8px;
-  font-size: 14px;
+  flex-direction: column;
+  height: 33%;
 }
 
 select:invalid {
@@ -15,4 +13,11 @@ select {
   height: 40px;
   width: 564px;
   border-radius: 5px;
+  padding-left: 10px;
+}
+
+.validation {
+  color: #d50000;
+  margin-left: 8px;
+  font-size: 14px;
 }

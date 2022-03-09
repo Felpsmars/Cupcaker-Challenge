@@ -1,0 +1,51 @@
+.container {
+  width: 100%;
+}
+
+.watchList {
+  display: flex;
+
+  margin-top: 20px;
+  border-bottom: 2px solid #eeeeee;
+
+  .letter {
+    margin-right: 2rem;
+    margin-left: 25px;
+    margin-bottom: 32px;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #3e3e3e;
+  width: 90%;
+  p {
+    font-size: 20px;
+  }
+}
+
+.name {
+  font-size: 27px;
+  margin-top: 15px;
+  line-height: 1px;
+}
+
+.multiplied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+
+  background: #0058ff;
+  color: white;
+
+  min-width: 200px;
+  height: 40px;
+
+  .caption {
+    font-size: 22px;
+  }
+}

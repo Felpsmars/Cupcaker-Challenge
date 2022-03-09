@@ -5,16 +5,22 @@ import { Header } from 'components/molecules'
 
 import { isAuthentication } from 'app/core/auth'
 
+import WatchListProvider from '../../provider/watchListProvider'
 import ModuleRoutes from './module-routes'
 import { coreRoutes } from './routes'
 
 const CoreRouter = (): JSX.Element => (
   <Router>
-    <Switch>
-      <Header>
-        <ModuleRoutes routes={coreRoutes} isAuthenticated={isAuthentication} />
-      </Header>
-    </Switch>
+    <WatchListProvider>
+      <Switch>
+        <Header>
+          <ModuleRoutes
+            routes={coreRoutes}
+            isAuthenticated={isAuthentication}
+          />
+        </Header>
+      </Switch>
+    </WatchListProvider>
   </Router>
 )
 

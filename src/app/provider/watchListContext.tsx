@@ -3,9 +3,9 @@ import { createContext, Dispatch, SetStateAction } from 'react'
 interface ICreated {
   name: string
   description: string | undefined
-  price: number | undefined
-  quantity: string | number | undefined
-  date: string
+  price: number 
+  quantity: number | string
+  date: Date
 }
 
 interface watchListContextData {

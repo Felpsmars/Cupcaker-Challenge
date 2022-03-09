@@ -5,9 +5,9 @@ import watchListContext from './watchListContext'
 interface ICreated {
   name: string
   description: string | undefined
-  price: number | undefined
-  quantity: string | number | undefined
-  date: string
+  price: number
+  quantity: string | number
+  date: Date
 }
 
 interface WatchListProviderProps {

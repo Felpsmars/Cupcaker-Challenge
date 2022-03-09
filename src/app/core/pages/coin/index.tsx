@@ -19,8 +19,8 @@ interface ICoin {
 }
 
 const Coin = (): JSX.Element => {
-  const [coin, setCoin] = useState<string>()
-  const [price, setPrice] = useState<number>()
+  const [coin, setCoin] = useState<string>('')
+  const [price, setPrice] = useState<number>(0)
   const [description, setDescription] = useState<string>()
   const [quantity, setQuantity] = useState<string>('')
   const { data, setData } = useContext(watchListContext)
@@ -35,16 +35,21 @@ const Coin = (): JSX.Element => {
     }
   }, [coin])
 
-  function saveAndRedirect(): void {
+  function saveSelection(): void {
     if (coin && quantity) {
       const created = {
         name: coin,
         description: description,
         price: price,
         quantity: quantity,
-        date: new Date().toLocaleString(),
+        date: new Date(),
       }
       setData([...data, created])
+    }
+  }
+
+  function redirectAfterValidation(): void {
+    if (coin && quantity) {
       history.push('/')
     }
   }
@@ -53,33 +58,37 @@ const Coin = (): JSX.Element => {
     <div className={styles.container}>
       <Typography text="Add New Coin" variant={TypographyVariant.h3} />
       <Panel className={styles.panel}>
-        <div className={styles.containerAll}>
-          <div className={styles.containerInputs}>
-            <div className={styles.containerCoins}>
-              <Select
-                onChange={(e: FormEvent<HTMLSelectElement>): void =>
-                  setCoin(e.currentTarget.value)
-                }
-                filled={coin}
-                coins={coins}
-              />
-              <Price price={price} />
-              <Quantity
-                quantity={quantity}
-                onChange={(e: FormEvent<HTMLInputElement>): void =>
-                  setQuantity(e.currentTarget.value)
-                }
-              />
-            </div>
-            <Letter coin={coin} description={description} />
+        <div>
+          <div className={styles.coins}>
+            <Select
+              onChange={(e: FormEvent<HTMLSelectElement>): void =>
+                setCoin(e.currentTarget.value)
+              }
+              filled={coin}
+              coins={coins}
+            />
+            <Price price={price} />
+            <Quantity
+              quantity={quantity}
+              onChange={(e: FormEvent<HTMLInputElement>): void =>
+                setQuantity(e.currentTarget.value)
+              }
+            />
           </div>
-          <Button
-            className={styles.button}
-            onClick={(): void => saveAndRedirect()}
-          >
-            ADD COIN
-          </Button>
+          <div className={styles.description}>
+            <Letter className={styles.letter} coin={coin} />
+            <p>{description ? description : 'No description!'}</p>
+          </div>
         </div>
+        <Button
+          className={styles.button}
+          onClick={(): void => {
+            saveSelection()
+            redirectAfterValidation()
+          }}
+        >
+          ADD NEW COIN
+        </Button>
       </Panel>
     </div>
   )
